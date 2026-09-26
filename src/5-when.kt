@@ -1,14 +1,22 @@
 
 fun main() {
+    println("getMonth(3):")
     getMonth(3)
+    println("")
+    println("getTrimester(3):")
     getTrimester(3)
+    println("")
+    println("getSemester(3):")
     getSemester(3)
+    println("")
+    println("result(value: Any):")
     result(true)
     result(8)
     result("Hola")
-    println(getResult1(3))
-    println(getResult2(6))
-    println(getResult3(8))
+    println("")
+    println(getMonth1(3))
+    println(getMonth2(6))
+    println(getMonth3(8))
 }
 
 fun getMonth(month: Int) {
@@ -23,11 +31,7 @@ fun getMonth(month: Int) {
         8 -> println("agosto")
         9 -> println("septiembre")
         10 -> println("octubre")
-        11 -> {
-            println("noviembre")
-            println("noviembre")
-        }
-
+        11 -> println("noviembre")
         12 -> println("diciembre")
         else -> println("error")
     }
@@ -59,7 +63,7 @@ fun result(value: Any) {
     }
 }
 
-fun getResult1(month: Int): String {
+fun getMonth1(month: Int): String {
     val result = when (month) {
         in 1..6 -> "primer semestre"
         in 7..12 -> "segundo semestre"
@@ -68,7 +72,7 @@ fun getResult1(month: Int): String {
     return result
 }
 
-fun getResult2(month: Int): String {
+fun getMonth2(month: Int): String {
     return when (month) {
         in 1..6 -> "primer semestre"
         in 7..12 -> "segundo semestre"
@@ -76,7 +80,7 @@ fun getResult2(month: Int): String {
     }
 }
 
-fun getResult3(month: Int) = when (month) {
+fun getMonth3(month: Int) = when (month) {
         in 1..6 -> "primer semestre"
         in 7..12 -> "segundo semestre"
         else -> "error"

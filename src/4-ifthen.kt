@@ -18,7 +18,7 @@ fun ifAnidado(pet: String) {
 fun ifMultiple(pet: String) {
     var isHappy = true
 
-    if (pet == "dog" || (pet == "cat" && isHappy)) {
+    if (((pet == "dog") || (pet == "cat")) && isHappy) {
         println("Es un perro o un gato feliz.")
     }
 }

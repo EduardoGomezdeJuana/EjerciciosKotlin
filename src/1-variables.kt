@@ -40,7 +40,7 @@ fun main(){
     val string1:String = "Eduardo"
     val string2 = "Eduardo Gomez"
     println(string2)
-    print("")
+    println("")
 
     /**
      * Boolean
