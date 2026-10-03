@@ -2,6 +2,7 @@
 fun main(){
     inmutableList()
     mutableList()
+    integerList()
 }
 
 fun inmutableList(){
@@ -12,7 +13,7 @@ fun inmutableList(){
     println(readOnly)
     println("primero: " + readOnly[0])
     println("primero: " + readOnly.first())
-    println("ultimo: " +readOnly.last())
+    println("ultimo: " + readOnly.last())
 
     // Filtrar la lista
     val example1 = readOnly.filter{ it.contains("a") }
@@ -54,7 +55,7 @@ fun mutableList(){
     println("")
 
     // Recorrer mutableList
-    println("Recorrer mutableList")
+    println("Recorrer mutableList con forEach")
     if(weekDays.isEmpty()) {
         //No escribe nada
     }else{
@@ -62,11 +63,56 @@ fun mutableList(){
     }
     println("")
 
+    println("Recorrer mutableList con forEach")
     if(weekDays.isNotEmpty()){
         weekDays.forEach{println(it)}
     }
     println("")
 
-    println("ultimo: " + weekDays.last())
+    println("Ultimo elemento: " + weekDays.last())
+    println("")
+}
+
+fun integerList(){
+
+    //Ejemplos con lista de numeros
+    val numeros = mutableListOf(1, 2, 3, 4, 5)
+    println("Ejemplos con lista de numeros: " + numeros)
+
+    val cuadrados = numeros.map { numero -> numero * numero }
+    println("Cuadrados map: " + cuadrados)
+    val pares = numeros.filter { numero -> numero % 2 == 0 }
+    println("Pares filter: " + pares)
+    val sumared = numeros.reduce { acc, numero -> acc + numero }
+    println("Suma reduce: " + sumared)
+    val ordenados = numeros.sortedByDescending { numero -> numero }
+    println("Ordenados sortedByDescending: " + ordenados)
+    val porParidad = numeros.groupBy { numero -> if (numero % 2 == 0) "par" else "impar" }
+    println("Map groupBy: " + porParidad)
+    val suma = numeros.sum()
+    println("Suma sum(): " + suma)
+    val maximo = numeros.max()
+    println("Maximo max(): " + maximo)
+    val minimo = numeros.min()
+    println("Minimo min(): " + minimo)
+    val promedio = numeros.average()
+    println("Promedio average(): " + promedio)
+    val unicos = numeros.distinct()
+    println("Valores unicos distinct(): " + unicos)
+    val primeroMayorQueTres = numeros.find { it > 3 }
+    println("Primero mayor 3 find{ it > 3 }: " + primeroMayorQueTres)
+    val hayNegativos = numeros.any { it < 0 }
+    println("Hay negativos find{ it < 0 }: " + hayNegativos)
+    val totalDoble = numeros.sumOf { it * 2 }
+    println("Total dobles sumOf{ it * 2 }: " + totalDoble)
+    println("")
+
+    //Definición de funciones de extensión
+    fun List<Int>.duplicar(): List<Int> {
+        return this.map { it * 2 }
+    }
+
+    val duplicados = numeros.duplicar()
+    println("Duplicados por funcion de extension: " + duplicados)
 
 }
