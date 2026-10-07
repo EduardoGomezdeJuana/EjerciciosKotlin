@@ -1,7 +1,7 @@
 
 fun main() {
-    var name1:String? = "Hola"
-    var name2:String? = null
+    val name1:String? = "Hola"
+    val name2:String? = null
 
     println("No es nulo y devuelve valor:")
     println(name1?.get(3) ?: "Es nulo")
